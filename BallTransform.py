@@ -1,9 +1,11 @@
-from source.self.qi.zheng.liu.ChooseFiles import choose_excel_files
-from source.self.qi.zheng.liu.DateUtil import generate_dates, filter_times, time_to_str, date_to_str
-from source.self.qi.zheng.liu.ExportToXlsxFile import export
-from source.self.qi.zheng.liu.ParseXlsFile import parse_xls_file
-from source.self.qi.zheng.liu.SignResult import SignResult
 from os import path
+
+from ChooseFiles import choose_excel_files
+from DateUtil import generate_dates, filter_times, time_to_str, date_to_str
+from ExportToXlsxFile import export
+from SignResult import SignResult
+
+from ParseXlsFile import parse_xls_file
 
 files_with_root = choose_excel_files()
 

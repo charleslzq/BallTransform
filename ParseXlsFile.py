@@ -1,9 +1,10 @@
-from xlrd import open_workbook
+import datetime
 from os import path
 from time import strptime, mktime
-import datetime
 
-from source.self.qi.zheng.liu.SignRecord import SignRecord
+from xlrd import open_workbook
+
+from SignRecord import SignRecord
 
 
 def parse_xls_file(root, file):

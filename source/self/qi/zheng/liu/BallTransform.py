@@ -7,6 +7,8 @@ for filename in files_with_root[1]:
     if filename.endswith(".xls"):
         raw_sign_record = parse_xls_file(files_with_root[0], filename)
         dates = generate_dates(raw_sign_record.month)
-        print(dates)
-        print(raw_sign_record)
+        for date in dates:
+            sign_times = raw_sign_record.find_times_by_date(date)
+            print(date)
+            print(sign_times)
 

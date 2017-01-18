@@ -8,7 +8,10 @@ def generate_dates(month):
     dates = []
     date_iterator = start_date
     while date_iterator.month == start_date.month:
-        dates.append(datetime.date(date_iterator.year, date_iterator.month, date_iterator.day))
+        date_to_check = datetime.date(date_iterator.year, date_iterator.month, date_iterator.day)
+        if date_to_check.isoweekday() <= 5:
+            dates.append(date_to_check)
         date_iterator += datetime.timedelta(days=1)
+    dates.sort()
     return dates
 

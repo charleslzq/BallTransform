@@ -15,3 +15,14 @@ def generate_dates(month):
     dates.sort()
     return dates
 
+
+def filter_times(sign_times):
+    valid_times = []
+    valid_start_time = datetime.time(hour=8, minute=31, second=0,microsecond=0)
+    valid_end_time = datetime.time(hour=16, minute=30, second=0, microsecond=0)
+    for sign_time in sign_times:
+        if sign_time < valid_start_time or sign_time > valid_end_time:
+            valid_times.append(sign_time)
+    valid_times.sort()
+    return valid_times
+

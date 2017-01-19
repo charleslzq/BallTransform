@@ -1,9 +1,7 @@
 import datetime, time
 
-
-valid_start_time = datetime.time(hour=8, minute=31, second=0,microsecond=0)
-valid_end_time = datetime.time(hour=16, minute=30, second=0, microsecond=0)
 moon_time = datetime.time(hour=12, minute=0, second=0, microsecond=0)
+
 
 def generate_dates(month):
     start_date_str = ''.join([month, '01'])
@@ -25,11 +23,11 @@ def filter_times(sign_times):
     morning_sign = []
     afternoon_sign = []
     for sign_time in sign_times:
-        if sign_time < valid_start_time and len(morning_sign) == 0:
+        if sign_time < moon_time and len(morning_sign) == 0:
             morning_sign.append(sign_time)
     sign_times.sort(reverse=True)
     for sign_time in sign_times:
-        if sign_time > valid_end_time and len(afternoon_sign) == 0:
+        if sign_time > moon_time and len(afternoon_sign) == 0:
             afternoon_sign.append(sign_time)
     return morning_sign, afternoon_sign
 
